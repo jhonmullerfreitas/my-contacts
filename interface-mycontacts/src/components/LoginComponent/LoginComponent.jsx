@@ -1,30 +1,60 @@
 import * as yup from "yup"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
+import axios from "axios"
+import { useState } from "react";
+import "./styles.css"
+
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginComponent = () =>{
 
-    const formSchema = yup.object().shape({
-        email: yup.string().required("Email obrigatório.").email("E-mail invalido."),
+    const [data, setData] = useState([])
+
+    const notifySucess = () => toast("Login realizado com sucesso.")
+    const notifyErro = () => toast("Email ou senha errado.")
+
+    const schema = yup.object().shape({
+        email: yup.string().email("E-mail invalido.").required("Email obrigatório."),
         password: yup.string().required("Senha obrigatória."),
     })
 
-    const {register, handleSubmit} = useForm({
-        resolver: yupResolver(formSchema),
+    const {register, handleSubmit, formState: { errors },} = useForm({
+        resolver: yupResolver(schema),
     });
 
 
-    const onSubmitFunction = (data) => console.log(data);
+    const url = "http://localhost:3001/users/login"
+    const onSubmitFunction = (data) => {
+        
+        setData(data)
+
+        axios.post(url, data)
+        .then(function (res){
+                window.localStorage.setItem("token", res.data.token)
+                notifySucess()
+            })
+        .catch(function (error){
+                notifyErro()
+        })
+    
+    };
+
     
     return(
-        <div>
+        <div className="box-form" >
+            <ToastContainer/>
             <h3>Login</h3>
-            <form onSubmit={handleSubmit(onSubmitFunction)} >
-                <input placeholder="Email" {...register('email')} />
-                <input type="Senha" {...register('password')} />
+            <form className="form" onSubmit={handleSubmit(onSubmitFunction)} >
 
-                <button type="submit">Entrar</button>
+                <input className="item-form" placeholder="Email" {...register('email')} />
+                <span className="erro-feedback">{errors.email?.message}</span>
+                <input className="item-form" placeholder="Senha" {...register('password')} />
+                <span className="erro-feedback">{errors.password?.message}</span>
+
+                <button className="button-form" type="submit">Entrar</button>
             </form>
         </div>
     )
