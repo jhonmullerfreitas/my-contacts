@@ -2,7 +2,7 @@ import * as yup from "yup"
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import axios from "axios"
-import { useState } from "react";
+// import { useState } from "react";
 import "./styles.css"
 
 import { ToastContainer, toast } from "react-toastify";
@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const LoginComponent = () =>{
 
-    const [data, setData] = useState([])
+    // const [data, setData] = useState([])
 
     const notifySucess = () => toast("Login realizado com sucesso.")
     const notifyErro = () => toast("Email ou senha errado.")
@@ -29,7 +29,7 @@ const LoginComponent = () =>{
     const url = "http://localhost:3001/users/login"
     const onSubmitFunction = (data) => {
         
-        setData(data)
+        // setData(data)
 
         axios.post(url, data)
         .then(function (res){
@@ -42,6 +42,7 @@ const LoginComponent = () =>{
     
     };
 
+    // console.log(data)
     
     return(
         <div className="box-form" >
