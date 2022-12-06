@@ -34,3 +34,71 @@ Você pode realizar o clone deste repositório contendo a aplicação completa a
 - Para executar o servidor em localhost através desta API, você precisa estar dentro do diretório `api-interface` e rodar o comando `$ yarn install` para instalar todas as dependências
 - Execute o comando `yarn dev` e note que o servidor irá iniciar em localhost:3001
 - Para requisições com clientes HTTP como Insomnia ou Postman siga o exemplo dos endpoints abaixo.
+
+## Endpoits exemplos:
+
+
+<table>
+  <tr>
+    <th>Verbo HTTP</th>
+    <th>URL</th>
+    <th>Body</th>
+    <th>Header</th>
+    <th>Função</th>
+  </tr>
+  <tr>
+    <td>POST</td>
+    <td>http://localhost:3001/users</td>
+    <td>{
+          "name": "user",
+          "email": "user@gmail.com",
+          "password": "1234",
+          "phone": "(92) 0000-9704"
+        }
+    </td>
+    <td></td>
+    <td>Cadastrar usuário</td>
+  </tr>
+  
+  <tr>
+    <td>POST</td>
+    <td>http://localhost:3001/users/login</td>
+    <td>{
+          "email": "user@gmail.com",
+          "password": "1234"
+        }
+    </td>
+    <td></td>
+    <td>Realiza Login</td>
+  </tr>
+  
+  <tr>
+    <td>POST</td>
+    <td>http://localhost:3001/users/contact</td>
+    <td>{
+          "name": "contato",
+          "email": "test@mail.com",
+          "phone": "12354654"
+        }
+    </td>
+    <td></td>
+    <td>Realiza Cadastro de contato</td>
+  </tr>
+  
+  <tr>
+    <td>GET</td>
+    <td>http://localhost:3001/users/contact</td>
+    <td>No body</td>
+    <td>Bearer token_de_login</td>
+    <td>Lista todos os contatos do usuário</td>
+  </tr>
+  
+  <tr>
+    <td>DELETE</td>
+    <td>http://localhost:3001/users/contact</td>
+    <td>{"idContact": "id_do_contato"}</td>
+    <td>Bearer token_de_login</td>
+    <td>Deleta um contato</td>
+  </tr>
+  
+</table>
