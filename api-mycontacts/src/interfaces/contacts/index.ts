@@ -23,3 +23,11 @@ export interface TokenPayload {
     exp: number;
 }
 
+export interface IDelete {
+    token: any;
+    idContact: string;
+}
+
+export interface IContactId{
+    idContact: string;
+}

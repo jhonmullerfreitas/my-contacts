@@ -27,6 +27,7 @@ const contactCreateService = async ({
     );
   }
 
+  token = token.split(" ")[1]
   const account = jwt.verify(token, "SECRET_KEY");
 
   const { email_token } = account as TokenPayload;
