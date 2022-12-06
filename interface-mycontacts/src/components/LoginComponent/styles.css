@@ -1,0 +1,51 @@
+.box-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25vw;
+
+    border-radius: 10px;
+    border: 3px solid rgb(151, 149, 149);
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 30vw;
+    height: 40vh;
+
+    
+}
+
+.item-form, .button-form{
+    height: 5vh;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.button-form{
+    width: 10vw;
+    font-size: 14px;
+    font-weight: bold;
+    color: #282c34;
+}
+
+.button-form:hover{
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: rgb(151, 149, 149);
+    color: white;
+}
+
+
+.erro-feedback{
+    color: red;
+    font-size: 10px;
+    font-weight: bold;
+}
