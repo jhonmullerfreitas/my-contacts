@@ -1,11 +1,5 @@
 import AllContactsComponent from "../../components/AllContactsComponent"
-
-
-
 const AllContactsPage = () => {
-
-
-
     return(
         <div>
             <AllContactsComponent/>

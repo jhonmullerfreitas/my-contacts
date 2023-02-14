@@ -1,7 +1,5 @@
 import SignUpComponent from "../../components/SignUpComponent/SignUpComponent";
-
 const SignUpPage = () => {
-
     return(
         <div>
             <SignUpComponent/>

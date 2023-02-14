@@ -58,6 +58,8 @@ const LoginComponent = () =>{
 
                 <button className="button-form" type="submit">Entrar</button>
             </form>
+
+            <button className="button-form" onClick={()=> navigate("/signup")}>Cadastrar</button>
         </div>
     )
 }

@@ -1,5 +1,4 @@
 import {Route, Routes as Switch} from "react-router-dom"
-
 import LoginPage from "../pages/Login"
 import HomePage from "../pages/Home"
 import SignUpPage from "../pages/SignUp"

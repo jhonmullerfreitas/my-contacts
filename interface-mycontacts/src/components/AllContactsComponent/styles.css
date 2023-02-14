@@ -24,3 +24,18 @@
     width: 70vw;
     font-size: 18px;
 }
+
+.btn-delete{
+    background-color: red;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.btn-delete:hover{
+    cursor: pointer;
+    border: 1px solid red;
+    color: red;
+    background-color: whitesmoke;
+}

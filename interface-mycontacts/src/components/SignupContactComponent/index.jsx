@@ -40,7 +40,7 @@ const SignUpContactComponent = () =>{
 
             setTimeout(() => {
                 navigate("/home");
-            }, "3000")  
+            }, "1500")  
         })
         .catch(function(error){
             const notifyErro = () => toast(`${error.response.data.message}`)
@@ -64,8 +64,10 @@ const SignUpContactComponent = () =>{
                 <span className="erro-feedback-signup-contact">{errors.phone?.message}</span>
 
                 <button className="button-form-signup-contact" type="submit" >Cadastrar</button>
+
             </form>
 
+                <button className="button-form-signup-contact" onClick={()=> navigate("/home")} >Voltar</button>
         </div>
     )
 }
